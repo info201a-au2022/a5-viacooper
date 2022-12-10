@@ -1,0 +1,13 @@
+name: shinyA5
+title: shinyA5
+username:
+account: viacooper
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7861927
+bundleId: 6619377
+url: https://viacooper.shinyapps.io/shinyA5/
+when: 1670657824.3756
+lastSyncTime: 1670657824.37562
+asMultiple: FALSE
+asStatic: FALSE

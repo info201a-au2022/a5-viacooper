@@ -1,4 +1,7 @@
 library(shiny)
+#data <- read_csv("co2-data/owid-co2-data.csv")
+data <- read.csv("owid-co2-data.csv")
+
 Intro <- tabPanel(
   "Introduction",
   h1("CO2 Emissions Per Capita Across the Globe"),
@@ -38,4 +41,5 @@ ui <- navbarPage("CO2 Emissions per Capita Across the World",
                  Intro,
                  interactive_page
                  )
+
 

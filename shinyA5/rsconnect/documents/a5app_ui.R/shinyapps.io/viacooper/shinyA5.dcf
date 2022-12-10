@@ -1,0 +1,14 @@
+name: shinyA5
+title: shinyA5
+username:
+account: viacooper
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7861927
+bundleId: 6619326
+url: https://viacooper.shinyapps.io/shinyA5/
+when: 1670656887.14748
+lastSyncTime: 1670656887.1475
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: a5app.R|co2-data

@@ -10,26 +10,24 @@
 library(shiny)
 library(readr)
 library(plotly)
-library(rgdal)
+library(shiny)
+library(dplyr)
+library(ggplot2)
+library(hrbrthemes)
+library(viridis)
+
 
 #intro variables
 
-highest_co2_country <- filter(plot_data, co2_per_capita == max(co2_per_capita)) %>%
-  pull(country)
-  
-lowest_co2_country <- filter(plot_data, co2_per_capita == min(co2_per_capita))%>%
-  pull(country)
-  
-highest_year <- filter(plot_data, co2_per_capita == max(co2_per_capita))%>%
-  pull(year)
 
-data <- read_csv("~/Documents/info201/assignments/a5-viacooper/co2-data/owid-co2-data.csv")
+
+#data <- read.csv("co2-data/owid-co2-data.csv")
+data <- read.csv("owid-co2-data.csv")
 
 plot_data <- data %>%
   select(country, co2_per_capita, year) %>%
   group_by(country)
   na.omit("world")
-View(plot_data)
 
 plot <- plot_data %>%
   ggplot(aes(x=year, y=co2_per_capita, color=country)) +
@@ -39,11 +37,16 @@ plot <- plot_data %>%
   theme_ipsum() +
   ylab("CO2 Emissions per Capita") 
 
-library(shiny)
-library(dplyr)
-library(ggplot2)
-install.packages("hrbrthemes")
-library(hrbrthemes)
+highest_co2_country <- filter(plot_data, co2_per_capita == max(co2_per_capita)) %>%
+  pull(country)
+
+lowest_co2_country <- filter(plot_data, co2_per_capita == min(co2_per_capita))%>%
+  pull(country)
+
+highest_year <- filter(plot_data, co2_per_capita == max(co2_per_capita))%>%
+  pull(year)
+
+
 
 ggplotly(plot)
 
